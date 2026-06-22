@@ -1,0 +1,19 @@
+{
+  "project": "OmicsDiagram",
+  "version": "2.4.1",
+  "active": true,
+  "maintainers": [
+    { "name": "Ada", "role": "lead", "commits": 1284 },
+    { "name": "Linus", "role": "reviewer", "commits": 503 }
+  ],
+  "config": {
+    "threads": 8,
+    "cache": { "enabled": true, "size_mb": 512, "path": "/tmp/cache" },
+    "outputs": ["png", "svg", "pdf"],
+    "experimental": null
+  },
+  "datasets": {
+    "rna_seq": { "samples": 96, "normalized": true },
+    "proteomics": { "samples": 48, "normalized": false }
+  }
+}
