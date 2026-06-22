@@ -1,6 +1,7 @@
 # jsonbonsai
 
 [![CI](https://github.com/Arahman0115/jsonbonsai/actions/workflows/ci.yml/badge.svg)](https://github.com/Arahman0115/jsonbonsai/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/jsonbonsai.svg)](https://pypi.org/project/jsonbonsai/)
 
 Turn any JSON file into a **beautiful, collapsible, bracket-free tree** in your terminal.
 
@@ -9,14 +10,22 @@ No more squinting at `{`, `}`, `[`, `]`, and trailing commas. `jsonbonsai` reads
 the arrow keys — color-coded by type, with soft hints like `3 items` instead of
 raw brackets.
 
-## Install (recommended)
+## Install
+
+```bash
+pip install jsonbonsai
+# or, isolated and always on your PATH:
+pipx install jsonbonsai
+```
+
+<details>
+<summary>Install from source</summary>
 
 ```bash
 git clone https://github.com/Arahman0115/jsonbonsai.git
-pipx install ./jsonbonsai      # isolated, always on your PATH
-# or
 pip install ./jsonbonsai
 ```
+</details>
 
 ## Use
 
@@ -50,7 +59,7 @@ Inside the value popup: `↑`/`↓` to scroll, `Esc` / `Enter` / `q` to close.
 This is how you read long fields (e.g. embedded HTML narratives) in full without
 them being clipped to the terminal width.
 
-If a value looks like HTML/XML (such as a FHIR `text.div` narrative), the popup
+If a value looks like HTML/XML (e.g. a long embedded markup string), the popup
 opens in a **formatted, syntax-highlighted view** — indented and readable instead
 of one long line. Press **`f`** to toggle between the formatted view and the
 **raw, byte-exact original value**. Non-markup values open raw with no toggle.
