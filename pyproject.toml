@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "jsonbonsai"
-version = "0.1.0"
+version = "0.1.1"
 description = "Turn any JSON file into a beautiful, collapsible, bracket-free tree in your terminal."
 readme = "README.md"
 requires-python = ">=3.9"
@@ -47,6 +47,16 @@ jsonbonsai = "jsonbonsai.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["jsonbonsai"]
+
+# Be explicit about the source archive so stray data files never ship.
+[tool.hatch.build.targets.sdist]
+include = [
+    "jsonbonsai/",
+    "tests/",
+    "README.md",
+    "LICENSE",
+    "pyproject.toml",
+]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
