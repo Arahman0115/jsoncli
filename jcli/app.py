@@ -224,7 +224,7 @@ class JSONTreeApp(App):
     # materialize the whole document and defeat lazy loading.
     MAX_EXPAND_NODES = 20_000
 
-    def __init__(self, data: Any, title: str = "jsoncli") -> None:
+    def __init__(self, data: Any, title: str = "jcli") -> None:
         super().__init__()
         self._data = data
         self._title = title
