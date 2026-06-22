@@ -1,5 +1,7 @@
 # jsoncli
 
+[![CI](https://github.com/Arahman0115/jcli/actions/workflows/ci.yml/badge.svg)](https://github.com/Arahman0115/jcli/actions/workflows/ci.yml)
+
 Turn any JSON file into a **beautiful, collapsible, bracket-free tree** in your terminal.
 
 No more squinting at `{`, `}`, `[`, `]`, and trailing commas. `jsoncli` reads a
