@@ -1,10 +1,10 @@
-# jsoncli
+# jcli
 
 [![CI](https://github.com/Arahman0115/jcli/actions/workflows/ci.yml/badge.svg)](https://github.com/Arahman0115/jcli/actions/workflows/ci.yml)
 
 Turn any JSON file into a **beautiful, collapsible, bracket-free tree** in your terminal.
 
-No more squinting at `{`, `}`, `[`, `]`, and trailing commas. `jsoncli` reads a
+No more squinting at `{`, `}`, `[`, `]`, and trailing commas. `jcli` reads a
 `.json` file and renders it as a navigable tree you can expand and collapse with
 the arrow keys — color-coded by type, with soft hints like `3 items` instead of
 raw brackets.
@@ -12,16 +12,17 @@ raw brackets.
 ## Install (recommended)
 
 ```bash
-pipx install /Users/afroza/jsoncli      # isolated, always on your PATH
+git clone https://github.com/Arahman0115/jcli.git
+pipx install ./jcli      # isolated, always on your PATH
 # or
-pip install /Users/afroza/jsoncli
+pip install ./jcli
 ```
 
 ## Use
 
 ```bash
-jsoncli sample.json        # open a file
-cat sample.json | jsoncli  # or pipe JSON in
+jcli sample.json        # open a file
+cat sample.json | jcli  # or pipe JSON in
 ```
 
 ### Keys
@@ -60,8 +61,8 @@ Formatting only changes the *display*; the underlying data is never modified.
 The viewer is interactive, so it needs a TTY (`-it`) and your file mounted in:
 
 ```bash
-docker build -t jsoncli /Users/afroza/jsoncli
-docker run --rm -it -v "$PWD":/data jsoncli sample.json
+docker build -t jcli .
+docker run --rm -it -v "$PWD":/data jcli sample.json
 ```
 
 ## How it simplifies the structure
@@ -74,12 +75,14 @@ docker run --rm -it -v "$PWD":/data jsoncli sample.json
 ## Project layout
 
 ```
-jsoncli/
-├── jsoncli/
-│   ├── cli.py      # argument parsing + JSON loading
-│   ├── app.py      # the interactive Textual tree app
-│   └── render.py   # label styling / type colors
-├── sample.json     # try it: jsoncli sample.json
-├── Dockerfile      # optional container build
+jcli/
+├── jcli/
+│   ├── cli.py        # argument parsing + JSON loading
+│   ├── app.py        # the interactive Textual tree app
+│   ├── render.py     # label styling / type colors / match highlight
+│   └── formatting.py # HTML/XML pretty-printing for the value popup
+├── tests/            # pytest suite
+├── sample.json       # try it: jcli sample.json
+├── Dockerfile        # optional container build
 └── pyproject.toml
 ```

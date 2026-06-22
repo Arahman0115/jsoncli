@@ -1,4 +1,4 @@
-"""Command-line entry point for jsoncli."""
+"""Command-line entry point for jcli."""
 
 from __future__ import annotations
 
@@ -19,19 +19,19 @@ def _load_json(source: str) -> Any:
     else:
         path = Path(source)
         if not path.exists():
-            sys.exit(f"jsoncli: file not found: {source}")
+            sys.exit(f"jcli: file not found: {source}")
         raw = path.read_text(encoding="utf-8")
         origin = path.name
 
     try:
         return json.loads(raw), origin
     except json.JSONDecodeError as exc:
-        sys.exit(f"jsoncli: invalid JSON in {origin}: {exc}")
+        sys.exit(f"jcli: invalid JSON in {origin}: {exc}")
 
 
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(
-        prog="jsoncli",
+        prog="jcli",
         description="View a JSON file as a beautiful, collapsible tree in your terminal.",
     )
     parser.add_argument(
@@ -43,7 +43,7 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument(
         "--version",
         action="version",
-        version=f"jsoncli {__version__}",
+        version=f"jcli {__version__}",
     )
     args = parser.parse_args(argv)
 
@@ -54,11 +54,11 @@ def main(argv: list[str] | None = None) -> None:
 
     if not sys.stdout.isatty():
         sys.exit(
-            "jsoncli: the interactive viewer needs a real terminal (TTY).\n"
+            "jcli: the interactive viewer needs a real terminal (TTY).\n"
             "Run it directly in your terminal rather than through a pipe."
         )
 
-    JSONTreeApp(data, title=f"jsoncli — {origin}").run()
+    JSONTreeApp(data, title=f"jcli — {origin}").run()
 
 
 if __name__ == "__main__":
