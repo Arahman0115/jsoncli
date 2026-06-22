@@ -1,17 +1,17 @@
-"""Test suite for jsoncli: pure helpers + interactive app behavior."""
+"""Test suite for jsonbonsai: pure helpers + interactive app behavior."""
 
 from __future__ import annotations
 
 import pytest
 
-from jsoncli.app import (
+from jsonbonsai.app import (
     JSONTreeApp,
     ValueScreen,
     count_nodes,
     search_paths,
 )
-from jsoncli.formatting import looks_like_html, pretty_html
-from jsoncli.render import highlight, label_for
+from jsonbonsai.formatting import looks_like_html, pretty_html
+from jsonbonsai.render import highlight, label_for
 
 
 SAMPLE = {

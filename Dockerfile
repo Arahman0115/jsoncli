@@ -1,7 +1,7 @@
-# Optional containerized build of jsoncli.
+# Optional containerized build of jsonbonsai.
 #
-# Build:   docker build -t jsoncli .
-# Run:     docker run --rm -it -v "$PWD":/data jsoncli /data/sample.json
+# Build:   docker build -t jsonbonsai .
+# Run:     docker run --rm -it -v "$PWD":/data jsonbonsai /data/sample.json
 #
 # The -it flags are REQUIRED: the viewer is interactive and needs a TTY.
 # Mount the directory holding your JSON with -v so the container can read it.
@@ -12,11 +12,11 @@ WORKDIR /app
 
 # Install dependencies first for better layer caching.
 COPY pyproject.toml README.md ./
-COPY jsoncli ./jsoncli
+COPY jsonbonsai ./jsonbonsai
 RUN pip install --no-cache-dir .
 
 # A sensible default term so colors render in the container.
 ENV TERM=xterm-256color
 
 WORKDIR /data
-ENTRYPOINT ["jsoncli"]
+ENTRYPOINT ["jsonbonsai"]

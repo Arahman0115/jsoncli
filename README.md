@@ -1,10 +1,10 @@
-# jsoncli
+# jsonbonsai
 
-[![CI](https://github.com/Arahman0115/jsoncli/actions/workflows/ci.yml/badge.svg)](https://github.com/Arahman0115/jsoncli/actions/workflows/ci.yml)
+[![CI](https://github.com/Arahman0115/jsonbonsai/actions/workflows/ci.yml/badge.svg)](https://github.com/Arahman0115/jsonbonsai/actions/workflows/ci.yml)
 
 Turn any JSON file into a **beautiful, collapsible, bracket-free tree** in your terminal.
 
-No more squinting at `{`, `}`, `[`, `]`, and trailing commas. `jsoncli` reads a
+No more squinting at `{`, `}`, `[`, `]`, and trailing commas. `jsonbonsai` reads a
 `.json` file and renders it as a navigable tree you can expand and collapse with
 the arrow keys — color-coded by type, with soft hints like `3 items` instead of
 raw brackets.
@@ -12,17 +12,17 @@ raw brackets.
 ## Install (recommended)
 
 ```bash
-git clone https://github.com/Arahman0115/jsoncli.git
-pipx install ./jsoncli      # isolated, always on your PATH
+git clone https://github.com/Arahman0115/jsonbonsai.git
+pipx install ./jsonbonsai      # isolated, always on your PATH
 # or
-pip install ./jsoncli
+pip install ./jsonbonsai
 ```
 
 ## Use
 
 ```bash
-jsoncli sample.json        # open a file
-cat sample.json | jsoncli  # or pipe JSON in
+jsonbonsai sample.json        # open a file
+cat sample.json | jsonbonsai  # or pipe JSON in
 ```
 
 ### Keys
@@ -61,8 +61,8 @@ Formatting only changes the *display*; the underlying data is never modified.
 The viewer is interactive, so it needs a TTY (`-it`) and your file mounted in:
 
 ```bash
-docker build -t jsoncli .
-docker run --rm -it -v "$PWD":/data jsoncli sample.json
+docker build -t jsonbonsai .
+docker run --rm -it -v "$PWD":/data jsonbonsai sample.json
 ```
 
 ## How it simplifies the structure
@@ -75,14 +75,14 @@ docker run --rm -it -v "$PWD":/data jsoncli sample.json
 ## Project layout
 
 ```
-jsoncli/
-├── jsoncli/
+jsonbonsai/
+├── jsonbonsai/
 │   ├── cli.py        # argument parsing + JSON loading
 │   ├── app.py        # the interactive Textual tree app
 │   ├── render.py     # label styling / type colors / match highlight
 │   └── formatting.py # HTML/XML pretty-printing for the value popup
 ├── tests/            # pytest suite
-├── sample.json       # try it: jsoncli sample.json
+├── sample.json       # try it: jsonbonsai sample.json
 ├── Dockerfile        # optional container build
 └── pyproject.toml
 ```

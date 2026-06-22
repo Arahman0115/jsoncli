@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "jsoncli"
+name = "jsonbonsai"
 version = "0.1.0"
 description = "Turn any JSON file into a beautiful, collapsible, bracket-free tree in your terminal."
 readme = "README.md"
@@ -32,9 +32,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Arahman0115/jsoncli"
-Repository = "https://github.com/Arahman0115/jsoncli"
-Issues = "https://github.com/Arahman0115/jsoncli/issues"
+Homepage = "https://github.com/Arahman0115/jsonbonsai"
+Repository = "https://github.com/Arahman0115/jsonbonsai"
+Issues = "https://github.com/Arahman0115/jsonbonsai/issues"
 
 [project.optional-dependencies]
 test = [
@@ -43,10 +43,10 @@ test = [
 ]
 
 [project.scripts]
-jsoncli = "jsoncli.cli:main"
+jsonbonsai = "jsonbonsai.cli:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["jsoncli"]
+packages = ["jsonbonsai"]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
